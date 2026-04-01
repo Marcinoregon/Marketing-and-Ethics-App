@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import UnitContent from './components/UnitContent';
 import CompletionScreen from './components/CompletionScreen';
 import AssessmentForm from './components/AssessmentForm';
+import Simulation from './components/Simulation';
 import './index.css';
 
 function App() {
@@ -45,7 +46,10 @@ function App() {
       <main className="main-content">
         <div className="content-wrapper">
 
-          {currentUnitId === 'assessment' ? (
+          {currentUnitId === 'simulation' ? (
+            <Simulation />
+
+          ) : currentUnitId === 'assessment' ? (
             <AssessmentForm lang={lang} units={courseData.units} unitScores={unitScores} />
 
           ) : isCompletion ? (

@@ -65,6 +65,17 @@ function Navigation({ units, currentUnitId, setCurrentUnitId, lang, setLang, cou
           );
         })}
 
+        <div className="nav-divider">{lang === 'en' ? 'Activities' : 'Actividades'}</div>
+        <li>
+          <button
+            className={`nav-item nav-item-sim ${currentUnitId === 'simulation' ? 'active' : ''}`}
+            onClick={() => setCurrentUnitId('simulation')}
+          >
+            <span className="nav-unit-num" style={{ background: currentUnitId === 'simulation' ? 'linear-gradient(135deg,#6366f1,#7c3aed)' : undefined, color: currentUnitId === 'simulation' ? 'white' : undefined }}>🎮</span>
+            <span>{lang === 'en' ? 'Simulation' : 'Simulación'}</span>
+          </button>
+        </li>
+
         {allCompleted && (
           <>
             <div className="nav-divider">{lang === 'en' ? 'Results' : 'Resultados'}</div>
