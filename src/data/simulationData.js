@@ -114,6 +114,14 @@ export const scenarios = [
             consequence:
               'Growth is slower (+15%), but PharmaEdge earns a designation from a national physicians\' association for responsible analgesic marketing. This repositions the brand as a trusted partner rather than a pure sales machine.',
           },
+          {
+            label: 'Co-sponsor "pain management education" events at rural clinics, using the events as a vehicle for ZenRelief sample distribution without formally designating them as pharmaceutical promotion.',
+            ethicalScore: 0,
+            ethicalImpact: 'Disguised Promotion',
+            framework: 'Stealth Marketing Violation',
+            consequence:
+              'An FDA audit classifies the hospital events as unpaid promotional activities. A consent decree requires dismantling the program. Hospital partners terminate the relationship after facing their own compliance reviews.',
+          },
         ],
       },
       {
@@ -151,6 +159,14 @@ export const scenarios = [
             framework: 'J&J Benchmark — Proactive Accountability',
             consequence:
               'The FDA commends PharmaEdge\'s transparency. The label amendment is completed in 6 months. While Q3 revenue dips, analysts note that PharmaEdge avoided the existential liability risk that has destroyed other pharma companies. Long-term brand equity strengthens.',
+          },
+          {
+            label: 'Present the updated findings only to the board risk committee under attorney-client privilege, shielding the data from future discovery while legal counsel evaluates options — without notifying the FDA.',
+            ethicalScore: 0,
+            ethicalImpact: 'Concealment Strategy',
+            framework: 'Legal Privilege Misuse',
+            consequence:
+              'Plaintiffs successfully challenge the privilege claim in subsequent litigation. The court compels full disclosure. Deliberately shielding material safety data significantly compounds both financial and reputational liability.',
           },
         ],
       },
@@ -190,6 +206,14 @@ export const scenarios = [
             consequence:
               'Dr. Ramirez\'s credibility is actually enhanced by the disclosure — audiences respect her transparency. The CME presentations are highly rated. PharmaEdge\'s medical affairs compliance program becomes a model cited in an industry white paper.',
           },
+          {
+            label: 'Structure the arrangement as an "independent research grant" paid through Dr. Ramirez\'s clinic rather than as personal consulting income, creating formal distance between the payment and her speaking activities.',
+            ethicalScore: 0,
+            ethicalImpact: 'Structural Deception',
+            framework: 'Shell Arrangement + Stealth Marketing',
+            consequence:
+              'A ProPublica investigation exposes the grant as a disguised compensation scheme. The IRS and HHS open simultaneous inquiries. Legal fees from the overlapping investigations exceed $40M and Dr. Ramirez faces a medical board review.',
+          },
         ],
       },
       {
@@ -228,6 +252,14 @@ export const scenarios = [
             consequence:
               'The ad receives unexpectedly strong patient trust scores in testing. Physicians report that informed patients have better conversations about appropriate use. Long-term, ZenRelief\'s patient retention — based on appropriate prescribing — outperforms competitors who face recall risk.',
           },
+          {
+            label: 'Add a QR code to the ad linking to a detailed online safety page, reasoning that patients who want complete risk information can access it on their own devices.',
+            ethicalScore: 1,
+            ethicalImpact: 'Insufficient Disclosure',
+            framework: 'Technical Compliance — Inadequate for Target Audience',
+            consequence:
+              'The FDA notes that QR codes are an inadequate disclosure mechanism for elderly audiences with lower smartphone adoption rates. A modification order requires the ad to be recut with visible on-screen risk information before it can continue airing.',
+          },
         ],
       },
       {
@@ -265,6 +297,14 @@ export const scenarios = [
             framework: 'J&J Benchmark — Proactive Accountability',
             consequence:
               'The response is widely cited as a benchmark of corporate crisis ethics. The independent audit identifies specific training failures and results in disciplinary action. PharmaEdge negotiates a consent decree — costly, but the company avoids criminal charges. Five years later, it is profitable and credible.',
+          },
+          {
+            label: 'Offer the outlet an exclusive on-camera interview with your CMO — framed to shape the narrative — in exchange for a one-week publication delay for "internal verification."',
+            ethicalScore: 0,
+            ethicalImpact: 'Media Manipulation',
+            framework: 'Accountability Evasion',
+            consequence:
+              'The outlet rejects the offer and includes the attempt in the story as evidence of managing rather than addressing the allegations. The failed media gambit generates its own headlines and accelerates DOJ interest in the case.',
           },
         ],
       },
@@ -321,6 +361,14 @@ export const scenarios = [
             consequence:
               'The opt-in feature generates lower volume but substantially higher user satisfaction scores. QuickCash is cited positively in a CFPB fintech report on emerging responsible lending practices. The opt-in cohort has 40% lower default rates — improving your unit economics.',
           },
+          {
+            label: 'License the Distress Score model to a third-party affiliate firm, allowing them to conduct real-time targeting on your behalf while QuickCash maintains plausible deniability about direct use of distress signals.',
+            ethicalScore: 0,
+            ethicalImpact: 'Outsourced Exploitation',
+            framework: 'Accountability Laundering',
+            consequence:
+              'The CFPB traces the affiliate relationship through financial records and classifies it as a disguised extension of QuickCash operations. The outsourcing adds defendants to the enforcement action without reducing QuickCash liability.',
+          },
         ],
       },
       {
@@ -358,6 +406,14 @@ export const scenarios = [
             framework: 'Informed Consent + Autonomy',
             consequence:
               'QuickCash\'s Net Promoter Score jumps 18 points over 6 months. Regulators cite your disclosure design as a positive model. Default rates fall as borrowers self-select more appropriately. Your VC investors initially protest the conversion drop, but the lower default rate improves your loan book quality.',
+          },
+          {
+            label: 'Implement a progressive disclosure flow where the APR appears only after borrowers complete all personal information fields, creating completion pressure before the most material financial term is revealed.',
+            ethicalScore: 0,
+            ethicalImpact: 'Dark Pattern',
+            framework: 'Sunk Cost Manipulation',
+            consequence:
+              'Behavioral economists serving as FTC expert witnesses identify the design as a classic sunk-cost dark pattern. The interface is specifically cited in subsequent FTC guidance on deceptive design in financial services.',
           },
         ],
       },
@@ -397,6 +453,14 @@ export const scenarios = [
             consequence:
               'The new campaign attracts a different user profile — lower volume but with a use case that better fits QuickCash\'s product. Default rates in this cohort are 30% lower. Industry press covers QuickCash as a fintech showing that "responsible lending marketing is a viable strategy," attracting a series of ESG-aligned investor inquiries.',
           },
+          {
+            label: 'Reframe QuickCash as a "credit-building tool for young adults" — without disclosing that QuickCash does not report loans to credit bureaus and the product does not actually build credit history.',
+            ethicalScore: 0,
+            ethicalImpact: 'False Claim',
+            framework: 'Deceptive Advertising',
+            consequence:
+              'An FTC complaint is filed within 90 days under Section 5. Corrective advertising must state that QuickCash loans do not build credit. Class action litigation follows, citing material misrepresentation targeting financially vulnerable youth.',
+          },
         ],
       },
       {
@@ -435,6 +499,14 @@ export const scenarios = [
             consequence:
               'Recovery rates are lower in the short term, but borrowers who engage with the hardship deferral program repay at 3× the rate of those in standard collections. Net recovery over 24 months is statistically comparable. QuickCash\'s collections protocol is referenced positively in a CFPB fintech guidance document.',
           },
+          {
+            label: 'Outsource collections to a third-party agency known for aggressive tactics, structuring the contract to exclude all oversight rights — creating distance from direct responsibility for collection conduct.',
+            ethicalScore: 0,
+            ethicalImpact: 'Accountability Laundering',
+            framework: 'FDCPA Proxy Risk',
+            consequence:
+              'The agency commits FDCPA violations within 60 days. As the creditor, QuickCash is held jointly liable. The oversight-exclusion clause is used as evidence of deliberate accountability avoidance and escalates the sanctions issued.',
+          },
         ],
       },
       {
@@ -472,6 +544,14 @@ export const scenarios = [
             framework: 'Proactive Accountability',
             consequence:
               'The CFPB supervisory letter commends QuickCash\'s "exemplary cooperation" and "self-identified remediation proposals." No enforcement action is filed. The remediation plan is embedded in a consent order — but one without civil money penalties. QuickCash is positioned to close its Series B on favorable terms, citing the clean supervisory outcome.',
+          },
+          {
+            label: 'Retain a former CFPB official as an examination consultant, using existing relationships to negotiate informally about scope and focus areas before formal proceedings begin.',
+            ethicalScore: 0,
+            ethicalImpact: 'Regulatory Capture Attempt',
+            framework: 'Good Faith Violation',
+            consequence:
+              'The examination team is aware of the consultant engagement. The CFPB expands rather than limits scope, noting the revolving-door arrangement raises questions about supervisory commitment. The consultant engagement is documented as a finding in the final supervisory report.',
           },
         ],
       },
@@ -528,6 +608,14 @@ export const scenarios = [
             consequence:
               'The repositioning is challenging initially — net revenue drops 35%. But VapeVault emerges as the only major vape brand not named in the multi-state litigation. Two years later, with the flavor ban in effect for competitors, VapeVault\'s adult-certified product line has a significant compliance advantage and commands premium pricing.',
           },
+          {
+            label: 'Rebrand the youth-appeal flavors with adult-coded names — renaming "Cotton Candy" to "Alpine Frost," for example — while retaining identical flavor chemistry to preserve current sales velocity.',
+            ethicalScore: 0,
+            ethicalImpact: 'Cosmetic Rebranding',
+            framework: 'Regulatory Evasion — JUUL Precedent',
+            consequence:
+              'FDA chemical testing confirms the renamed products are chemically identical to the originals. The rebranding is cited as evidence of bad faith in enforcement proceedings. The FDA specifically escalates its response because of the deliberate evasion attempt.',
+          },
         ],
       },
       {
@@ -565,6 +653,14 @@ export const scenarios = [
             framework: 'Harm Prevention + Consumer Vulnerability Protection',
             consequence:
               'The termination costs significant short-term brand awareness. However, VapeVault avoids regulatory action and positions its marketing platform as the industry\'s most compliant. Tobacco harm reduction organizations — influential with adult former smokers — begin to engage with VapeVault\'s adult-directed content positively.',
+          },
+          {
+            label: 'Transfer the influencer contracts to the parent tobacco conglomerate\'s marketing agreements, allowing the same content to continue running under the parent company\'s legal entity rather than VapeVault directly.',
+            ethicalScore: 0,
+            ethicalImpact: 'Liability Shuffling',
+            framework: 'Accountability Evasion',
+            consequence:
+              'Regulators pierce the corporate structure and attribute the influencer network to VapeVault regardless of contract holder. The transfer is characterized as a deliberate liability shuffle, compounding regulatory findings against both VapeVault and its parent company.',
           },
         ],
       },
@@ -604,6 +700,14 @@ export const scenarios = [
             consequence:
               'The retail footprint reduction hurts short-term revenue. However, VapeVault\'s new distribution map — focused on adult destinations — becomes evidence of systematic ethical compliance when regulators review the industry. The company is specifically excluded from a multi-state retail enforcement action.',
           },
+          {
+            label: 'Reclassify the school-proximity algorithm as a "general urban density optimization tool" in internal documentation, changing the stated rationale while leaving the operational distribution pattern completely unchanged.',
+            ethicalScore: 0,
+            ethicalImpact: 'Documentation Fraud',
+            framework: 'Intentional Misclassification',
+            consequence:
+              'Original algorithm design documents are obtained through a public records request. Side-by-side comparison with the reclassified documentation is submitted to the FDA as direct evidence of intent to target youth-proximate retail locations, significantly worsening the enforcement outcome.',
+          },
         ],
       },
       {
@@ -642,6 +746,14 @@ export const scenarios = [
             consequence:
               'The decision to pursue MRTP authorization positions VapeVault as the only major brand investing in FDA-reviewed harm reduction claims. Two years later, a partial MRTP authorization is granted — creating a sustainable, legally defensible competitive advantage no competitor can claim quickly.',
           },
+          {
+            label: 'Commission an accelerated 30-day internal study using a protocol calibrated to reproduce the 70% figure, then cite it as "independent verification" in the relaunch campaign.',
+            ethicalScore: 0,
+            ethicalImpact: 'Manufactured Evidence',
+            framework: 'Research Integrity Violation',
+            consequence:
+              'The 30-day timeline and industry funding are exposed by investigative journalists. An independent methodologist publishes a public critique of the protocol. The FDA cites the study in its warning letter as an example of manipulated post-market research and expands the scope of enforcement.',
+          },
         ],
       },
       {
@@ -679,6 +791,14 @@ export const scenarios = [
             framework: 'Accountability + Reparative Justice',
             consequence:
               'The response is painful and expensive. The treatment fund is praised by public health advocates. The legislative committee hearing shifts its focus from VapeVault specifically to industry-wide regulation — a broader outcome. VapeVault\'s parent company, seeing the accountability posture, replaces company leadership but redirects the brand toward a genuinely adult-only positioning for the first time.',
+          },
+          {
+            label: 'Negotiate a confidential settlement with the family under a strict NDA that bars the 16-year-old from further public testimony, while publicly stating VapeVault "takes all concerns seriously and has resolved this privately."',
+            ethicalScore: 0,
+            ethicalImpact: 'Silencing a Victim',
+            framework: 'Accountability Suppression',
+            consequence:
+              'The legislative committee subpoenas the settlement terms. State statutes void the NDA as an attempt to suppress public health testimony. The settlement attempt is characterized in hearings as deliberate silencing of a minor victim, generating substantially harsher legislative outcomes than the original testimony alone.',
           },
         ],
       },

@@ -1537,6 +1537,45 @@ a { text-decoration: none; color: inherit; }
   padding: 0.3rem 0.8rem 0.3rem 0.5rem;
 }
 
+/* Name Input */
+.cert-name-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(99,102,241,0.05);
+  border: 1px solid rgba(99,102,241,0.18);
+  border-radius: var(--radius-lg);
+}
+
+.cert-name-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.cert-name-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(99,102,241,0.3);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.cert-name-input::placeholder { color: var(--text-muted); font-weight: 400; }
+
+.cert-name-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
 /* Actions */
 .cert-actions {
   display: flex;

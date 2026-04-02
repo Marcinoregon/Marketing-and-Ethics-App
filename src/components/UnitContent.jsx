@@ -38,7 +38,7 @@ function KeyTermBubble({ term, definition }) {
   );
 }
 
-function UnitContent({ unit, lang, onQuizComplete, existingScore }) {
+function UnitContent({ unit, lang, onQuizComplete, existingScore, onNextUnit }) {
   if (!unit) return null;
 
   return (
@@ -128,6 +128,7 @@ function UnitContent({ unit, lang, onQuizComplete, existingScore }) {
           unitId={unit.id}
           onQuizComplete={onQuizComplete}
           existingScore={existingScore}
+          onNextUnit={onNextUnit}
         />
       </section>
     </div>

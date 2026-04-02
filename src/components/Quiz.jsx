@@ -2,9 +2,45 @@ import React, { useState, useEffect } from 'react';
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
-function Quiz({ quizData, lang, unitId, onQuizComplete, existingScore }) {
+function Quiz({ quizData, lang, unitId, onQuizComplete, existingScore, onNextUnit }) {
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
+
+  // If this quiz was already submitted this session, show locked state
+  if (existingScore) {
+    const lp = Math.round(existingScore.score / existingScore.total * 100);
+    const lc = lp === 100 ? '#10b981' : lp >= 80 ? '#34d399' : lp >= 60 ? '#f59e0b' : '#ef4444';
+    const ll = lp === 100 ? (lang === 'en' ? '🏆 Perfect!' : '🏆 ¡Perfecto!')
+      : lp >= 80 ? (lang === 'en' ? '👍 Great work' : '👍 Buen trabajo')
+      : lp >= 60 ? (lang === 'en' ? '📖 Keep studying' : '📖 Sigue estudiando')
+      : (lang === 'en' ? '📝 Review above' : '📝 Revisa arriba');
+    return (
+      <div className="quiz-panel">
+        <div className="quiz-header">
+          <h3 className="quiz-title">
+            {lang === 'en' ? '🧠 Knowledge Check' : '🧠 Verificación de Conocimientos'}
+          </h3>
+          <div className="quiz-score-inline">
+            <span className="quiz-score-num" style={{ color: lc }}>
+              {existingScore.score}/{existingScore.total} · {lp}%
+            </span>
+            <span className="quiz-grade-badge" style={{ color: lc }}>{ll}</span>
+          </div>
+        </div>
+        <div style={{ padding: '0.9rem 1.25rem', color: 'var(--text-muted)', fontSize: '0.85rem', borderTop: '1px solid var(--border)' }}>
+          🔒 {lang === 'en' ? 'Quiz submitted — one attempt only.' : 'Prueba enviada — solo un intento permitido.'}
+        </div>
+        {onNextUnit && (
+          <div className="quiz-footer">
+            <div />
+            <button className="btn" onClick={onNextUnit}>
+              {lang === 'en' ? 'Next Unit →' : 'Siguiente Unidad →'}
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   useEffect(() => {
     setAnswers({});
@@ -36,7 +72,7 @@ function Quiz({ quizData, lang, unitId, onQuizComplete, existingScore }) {
   const gradeLabel = pct === null ? '' : pct === 100 ? (lang === 'en' ? '🏆 Perfect!' : '🏆 ¡Perfecto!')
     : pct >= 80 ? (lang === 'en' ? '👍 Great work' : '👍 Buen trabajo')
     : pct >= 60 ? (lang === 'en' ? '📖 Keep studying' : '📖 Sigue estudiando')
-    : (lang === 'en' ? '🔄 Try again' : '🔄 Inténtalo de nuevo');
+    : (lang === 'en' ? '📝 Review above' : '📝 Revisa arriba');
 
   return (
     <div className="quiz-panel">
@@ -165,12 +201,11 @@ function Quiz({ quizData, lang, unitId, onQuizComplete, existingScore }) {
               <span className="score-value" style={{ color: gradeColor }}>{score} / {total}</span>
               <span className="score-badge">{gradeLabel}</span>
             </div>
-            <button
-              className="btn btn-secondary"
-              onClick={() => { setAnswers({}); setSubmitted(false); }}
-            >
-              {lang === 'en' ? '↩ Retake Quiz' : '↩ Reintentar'}
-            </button>
+            {onNextUnit && (
+              <button className="btn" style={{ marginTop: '0.5rem' }} onClick={onNextUnit}>
+                {lang === 'en' ? 'Next Unit →' : 'Siguiente Unidad →'}
+              </button>
+            )}
           </>
         )}
       </div>

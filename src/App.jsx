@@ -23,6 +23,10 @@ function App() {
     setUnitScores(prev => ({ ...prev, [unitId]: { score, total } }));
   };
 
+  const currentUnitIndex = courseData.units.findIndex(u => u.id === currentUnitId);
+  const nextUnit = courseData.units[currentUnitIndex + 1];
+  const handleNextUnit = nextUnit ? () => setCurrentUnitId(nextUnit.id) : null;
+
   const handleRestart = () => {
     setUnitScores({});
     setCurrentUnitId('intro');
@@ -47,7 +51,7 @@ function App() {
         <div className="content-wrapper">
 
           {currentUnitId === 'simulation' ? (
-            <Simulation />
+            <Simulation lang={lang} />
 
           ) : currentUnitId === 'assessment' ? (
             <AssessmentForm lang={lang} units={courseData.units} unitScores={unitScores} />
@@ -130,6 +134,7 @@ function App() {
               lang={lang}
               onQuizComplete={handleQuizComplete}
               existingScore={unitScores[currentUnitId]}
+              onNextUnit={handleNextUnit}
             />
           )}
         </div>
