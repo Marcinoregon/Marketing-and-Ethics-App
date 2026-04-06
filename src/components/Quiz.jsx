@@ -6,6 +6,13 @@ function Quiz({ quizData, lang, unitId, onQuizComplete, existingScore, onNextUni
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
+  // ⚠️ This useEffect MUST stay above the existingScore early return to satisfy
+  // React's Rules of Hooks (hooks must be called in the same order every render).
+  useEffect(() => {
+    setAnswers({});
+    setSubmitted(false);
+  }, [quizData]);
+
   // If this quiz was already submitted this session, show locked state
   if (existingScore) {
     const lp = Math.round(existingScore.score / existingScore.total * 100);
@@ -41,11 +48,6 @@ function Quiz({ quizData, lang, unitId, onQuizComplete, existingScore, onNextUni
       </div>
     );
   }
-
-  useEffect(() => {
-    setAnswers({});
-    setSubmitted(false);
-  }, [quizData]);
 
   const handleSelect = (qi, oi) => {
     if (submitted) return;

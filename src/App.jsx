@@ -20,7 +20,14 @@ function App() {
     courseData.units.every(u => unitScores[u.id] !== undefined);
 
   const handleQuizComplete = (unitId, score, total) => {
-    setUnitScores(prev => ({ ...prev, [unitId]: { score, total } }));
+    setUnitScores(prev => {
+      const next = { ...prev, [unitId]: { score, total } };
+      // If every unit is now done, navigate to the completion screen
+      if (courseData.units.every(u => next[u.id] !== undefined)) {
+        setCurrentUnitId('completion');
+      }
+      return next;
+    });
   };
 
   const currentUnitIndex = courseData.units.findIndex(u => u.id === currentUnitId);
@@ -128,7 +135,7 @@ function App() {
               )}
             </div>
 
-          ) : (
+          ) : currentUnit ? (
             <UnitContent
               unit={currentUnit}
               lang={lang}
@@ -136,7 +143,7 @@ function App() {
               existingScore={unitScores[currentUnitId]}
               onNextUnit={handleNextUnit}
             />
-          )}
+          ) : null}
         </div>
       </main>
     </div>
